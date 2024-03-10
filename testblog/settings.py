@@ -148,7 +148,7 @@ if not DEBUG:
     # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-#STATIC_ROOT = BASE_DIR / "static_files" # wee need to create this before deployment to collect all static files in one folder
+STATIC_ROOT = BASE_DIR / "static_files" # wee need to create this before deployment to collect all static files in one folder
 # then we need to run python3 manage.py collectstatic
 # if we made in change in any static file we need to run python3 manage.py collectstatic again
 
