@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Post
+{% endblock %}
+
+{% block content %}
+<dev3>
+    {% if comment_form.errors %} <!--this will show this block when there is an error-->
+    <h1>there is an error </h1>
+    <a href="#invalid">fix</a> <!--this will mive the user to the form section on the website which has the id invalid -->
+    {% endif %}
+</dev3>
+<section>
+    
+ <h2>{{ post.title }}</h2>
+ <h3>{{favorite_ids}}</h3>
+ <h4>{{post.id}}</h4>
+     <p>  
+        {% include "blog/includes/p.html" %}
+        
+    </p>
+    <h3>
+        <a href="mailto:{{post.author.email}}">{{post.author}}</a>  <!-- This is a comment  mailto is used to open email once the link is clicked -->
+    </h3>
+    <ul>
+        <li>
+            {% for tag in tags %} <!-- The template does not have access to the the_post variable directly. The variables need to be passed explicitly from the view to the template context.
+            Template tags like for don't allow attribute access or function calls like .all().-->
+            {{ tag.caption }}
+            {% endfor %}
+        </li>
+    </ul>
+</section>
+
+<div>
+  
+    <form action="{% url "read-later" %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" value="{{post.id}}" name="post_id">
+        <button>
+            {% if not stored %}
+            Read Later
+            {% else %}
+            remove from read Later
+            {% endif %}
+
+        </button>
+
+    </form>
+</div>
+
+
+<section>
+    <ul>
+        {% for comment in comments%}
+        <li>
+            <h2>{{comment.user_name}}</h2>
+    <p2>{{comment.text}}</p2>
+</li>
+        {% endfor %}
+    </ul>
+</section>
+
+    <form action="{% url "detail" post.slug %}" method="POST"> <!-- we use the name of the url in urls.py -->
+        {% csrf_token%}
+    {% for form in comment_form %} <!-- loob throug every column in the form and get the label of it and the column itself and the error which are python self values-->
+    <dev id="{% if form.errors %} Invalid {% endif %}">
+    {{form.label_tag}}
+    {{form}}
+    {{form.errors}}
+    {% endfor %}
+
+</dev>
+    <button>Save Comment</button>
+</form>
+{% endblock %}

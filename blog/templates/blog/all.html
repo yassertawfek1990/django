@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+All Posts
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <ul>
+        <h2>My Posts</h2>
+        {% for post in allposts %}
+        {% include "blog/includes/p.html" %}
+        {% endfor %}
+
+    </ul>
+</section>
+{% endblock %}

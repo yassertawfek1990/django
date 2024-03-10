@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+ Read Later
+{% endblock %}
+
+    {% block css %}
+    <link rel="stylesheet" href="{% static "blog/app.css" %}">
+    {% endblock %}
+{% block content %}
+<div><p3>
+{% if has_post %}
+
+<ul>
+    {% for post in posts %}
+    <li>
+        <a href="{% url "detail" post.slug %}">{{post.title}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<h4>No Posts Yet</h4>
+{% endif %}
+</p3>
+</div>
+{% endblock %}

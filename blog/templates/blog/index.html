@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+My blog
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "blog/styles.css" %}">
+{% endblock %}
+
+{% block content %}
+<section id="wa7ed">
+    <header id="bigfont">
+    <img src="{% static "blog/images/4.png" %}" alt="Max - The Author Of This Blog" />
+    <h2>Yasser Tawfek blog</h2>
+    </header>
+    <p>el parmaga le3bety w ba7ebaha gedan gedaaan kaman</p>
+</section>
+<section id="second">
+    <h2>My Posts</h2>
+    <ul id ="lista">
+        {% for post in posts %}
+        {% include "blog/includes/p.html" %}
+        {% endfor %}
+       
+    </ul>
+</section>
+{% endblock %}
