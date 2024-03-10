@@ -280,7 +280,7 @@ pip install gunicorn
 
 render only supoorts django 3.2 or less
 so
-pip install django==3.2.1
+pip install django==3.2
 then create a in the main project directory a file called build.sh
 this file is the same for all platforms and has the same three commands
 then run 
@@ -288,7 +288,8 @@ install necessary installs like
 pip install psycopg2-binary
 python3 -m pip install Django pillow
 then run
-python3 -m pip freeze > requiremnets.txt
+pip install pipreqs
+pipreqs . --force --ignore=tests         #(Overwrites exisiting requirements.txt, ignores the tests directory) # the dot refers to current directory
 then we need to push to git hub
 then gi to render dashboard
 then change 

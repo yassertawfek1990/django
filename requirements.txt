@@ -3,7 +3,6 @@ ConfigParser==6.0.1
 contextlib2==21.6.0
 cryptography==3.4.8
 dj_database_url==2.1.0
-Django==3.2
 Django==3.2.12
 docutils==0.20.1
 Fabric==3.2.2
