@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-_7kifta98%yi@6a=#97&423-lw9)*-mhv&gm3l#-=k%s+3skiu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True # we set to false after finishing development period
 # getenv("developing",True)
-ALLOWED_HOSTS = [ ] # we set the default to be localhost so it will be using the local host during the developing phase and the hots name during deploying
+ALLOWED_HOSTS = ["'mysite-335x.onrender.com" ] # we set the default to be localhost so it will be using the local host during the developing phase and the hots name during deploying
 #[ getenv("allowed_hosts", "localhost")]
 
 # Application definition
