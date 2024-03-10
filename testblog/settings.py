@@ -280,5 +280,5 @@ pip install django pillow gunicorn uvicorn 'whitenoise[brotli]' dj-database-url 
 
 then
 
-python3 -m pip freeze > requiremnets.txt
+python3 -m pip freeze > requirements.txt
 """
