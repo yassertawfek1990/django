@@ -224,7 +224,6 @@ allowed_hosts   getenv('the value', 'localhost') # we set the default to be loca
 """
 if we want to connect psotgre sql 
 we go to postgresql django then install the package 
-pip install --upgrade pip 
 
 pip install django psycopg2-binary
 then we need to run 
