@@ -153,5 +153,5 @@ STATIC_ROOT = BASE_DIR / "static_files" # wee need to create this before deploym
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = BASE_DIR / "uploads" # we need to add this folder in settings before we use it as a folder for users to upload to
-MEDIA_URL = "/files/" # we need to creat this url so django use it as url for files uploaded by users or files in general which we acces with iamge.url
+MEDIA_URL = "/files/" # we need to creat this url so  django use it as url for files uploaded by users or files in general which we acces with iamge.url
 
