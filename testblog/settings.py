@@ -290,6 +290,7 @@ python3 -m pip install Django pillow
 then run
 pip install pipreqs
 pipreqs . --force --ignore=tests         #(Overwrites exisiting requirements.txt, ignores the tests directory) # the dot refers to current directory
+from the requirments file remove Django==3.2 if it is diplicted with other versions
 then we need to push to git hub
 then gi to render dashboard
 then change 
