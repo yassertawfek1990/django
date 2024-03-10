@@ -262,39 +262,23 @@ DATABASES = {
 
 """
 deploying via render
-VIRTUAL ENV anything in virtual env
 
-first  to handle static
-pip install whitenoise
+check the render docs
+we have to add the created link to allowed hosts
 
-Then ADD to 
-MIDDLEWARE:
-'whitenoise.middleware.WhiteNoiseMiddleware',
-after the first line
-then after the stati root we add this line
+we add the render.yaml for automatic deploying
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-then 
+only postgresql
+adding if debug true doesnot mean we remove our static root
 
-pip install gunicorn
+create the proper requirments.txt 
 
-render only supoorts django 3.2 or less
-so
-pip install django==3.2
-then create a in the main project directory a file called build.sh
-this file is the same for all platforms and has the same three commands
-then run 
-install necessary installs like
-pip install psycopg2-binary
-python3 -m pip install Django pillow
-then run
-pip install pipreqs
-pipreqs . --force --ignore=tests         #(Overwrites exisiting requirements.txt, ignores the tests directory) # the dot refers to current directory
-from the requirments file remove Django==3.2 if it is diplicted with other versions
-then we need to push to git hub
-then gi to render dashboard
-then change 
-Build Command sh bulid.sh
-Start Command  gunicorn testblog.wsgi # the name of the folder containg wsgi
+by initializing a brand new virtual enironment
+then pip install all things we installed during the development like this
 
+pip install django pillow gunicorn uvicorn 'whitenoise[brotli]' dj-database-url psycopg2-binary
+
+then
+
+python3 -m pip freeze > requiremnets.txt
 """
