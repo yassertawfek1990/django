@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'Whitenoise.Middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -263,7 +263,7 @@ pip install whitenoise
 
 Then ADD to 
 MIDDLEWARE:
-'Whitenoise.Middleware.WhiteNoiseMiddleware',
+'whitenoise.middleware.WhiteNoiseMiddleware',
 after the first line
 then after the stati root we add this line
 
@@ -289,3 +289,4 @@ then change
 Build Command sh bulid.sh
 Start Command  gunicorn testblog.wsgi # the name of the folder containg wsgi
 
+"""
