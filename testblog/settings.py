@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_7kifta98%yi@6a=#97&423-lw9)*-mhv&gm3l#-=k%s+3skiu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv("developing",True) # we set to false after finishing development period
-
-ALLOWED_HOSTS = [ getenv("allowed_hosts", '127.0.0.1')] # we set the default to be localhost so it will be using the local host during the developing phase and the hots name during deploying
+DEBUG = True # we set to false after finishing development period
+# getenv("developing",True)
+ALLOWED_HOSTS = [ ] # we set the default to be localhost so it will be using the local host during the developing phase and the hots name during deploying
 #[ getenv("allowed_hosts", "localhost")]
 
 # Application definition
@@ -283,3 +283,9 @@ pip install psycopg2-binary
 python3 -m pip install Django pillow
 then run
 python3 -m pip freeze > requiremnets.txt
+then we need to push to git hub
+then gi to render dashboard
+then change 
+Build Command sh bulid.sh
+Start Command  gunicorn testblog:wsgi # the name of the folder containg wsgi
+
