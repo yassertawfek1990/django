@@ -287,5 +287,5 @@ then we need to push to git hub
 then gi to render dashboard
 then change 
 Build Command sh bulid.sh
-Start Command  gunicorn testblog:wsgi # the name of the folder containg wsgi
+Start Command  gunicorn testblog.wsgi # the name of the folder containg wsgi
 
