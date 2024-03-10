@@ -219,7 +219,7 @@ if we want to connect psotgre sql
 we go to postgresql django then install the package 
 pip install --upgrade pip 
 
-pip install psycopg2-binary
+pip install django psycopg2-binary
 then we need to run 
 python3 -m pip freeze > requiremnets.txt
 
